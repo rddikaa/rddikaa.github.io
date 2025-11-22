@@ -87,7 +87,7 @@
 
       .name-text {
         font-size: 20px;
-        font-weight: 700;
+        font-weight: 600;
       }
 
       /* VERIFIED BADGE */
@@ -137,6 +137,43 @@
         50% { opacity: 0; }
       }
 
+      /* === SKILLS SECTION === */
+
+      .skills-block {
+        margin-top: 24px;
+      }
+
+      .skills-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .skill-row {
+        margin-bottom: 12px;
+      }
+
+      .skill-top {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        margin-bottom: 4px;
+      }
+
+      .skill-bar {
+        width: 100%;
+        height: 6px;
+        border-radius: 999px;
+        background: #0b1220;
+        overflow: hidden;
+      }
+
+      .skill-bar-fill {
+        height: 100%;
+        width: 0;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #38bdf8, #1be966);
+      }
 
       
       /* === TYPING EFFECT STYLE === */
@@ -505,7 +542,64 @@
             I'm also a content creator with a passion for photography and videography, and I love capturing moments as creatively as I build projects.
           </p>
 
-          <p class="portfolio-title">Let's Check my Portfolio!</p>
+          <!-- == skill == -->
+          <section class="skills-block">
+            <h2 class="skills-title">Skills</h2>
+
+            <div class="skill-row" data-percent="85">
+              <div class="skill-top">
+                <span class="skill-name">HTML & CSS</span>
+                <span class="skill-value">0%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-fill"></div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-percent="90">
+              <div class="skill-top">
+                <span class="skill-name">C++</span>
+                <span class="skill-value">0%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-fill"></div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-percent="70">
+              <div class="skill-top">
+                <span class="skill-name">SQL</span>
+                <span class="skill-value">0%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-fill"></div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-percent=87">
+              <div class="skill-top">
+                <span class="skill-name">Videography</span>
+                <span class="skill-value">0%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-fill"></div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-percent=80">
+              <div class="skill-top">
+                <span class="skill-name">Video Editing</span>
+                <span class="skill-value">0%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-fill"></div>
+              </div>
+            </div>
+          </section>
+
+
+
+          <h2 class="portfolio-title">My Portfolio</h2>
 
           <div class="portfolio-grid">
             <div class="portfolio-item">
@@ -598,6 +692,40 @@
       document.addEventListener("DOMContentLoaded", () => {
         roleText.textContent = "";
         setTimeout(type, 700);
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const rows = document.querySelectorAll(".skill-row");
+
+        rows.forEach((row) => {
+          const target = parseInt(row.dataset.percent, 10);
+
+          // kalau data-percent nggak ada / bukan angka => jangan jalanin animasi
+          if (isNaN(target)) return;
+
+          const fill = row.querySelector(".skill-bar-fill");
+          const valueEl = row.querySelector(".skill-value");
+
+          let current = 0;
+          const duration = 1000; // ms
+          const fps = 60;
+          const intervalTime = 1000 / fps;
+          const step = target / (duration / intervalTime);
+
+          const interval = setInterval(() => {
+            current += step;
+
+            if (current >= target) {
+              current = target;
+              clearInterval(interval);
+            }
+
+            const rounded = Math.round(current);
+            fill.style.width = rounded + "%";
+            valueEl.textContent = rounded + "%";
+          }, intervalTime);
+        });
       });
     </script>
   </body>
