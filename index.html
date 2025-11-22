@@ -211,7 +211,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        padding: 10px 0;
+        padding: 15px 0;
         border-bottom: 1px solid #1e293b;
       }
 
@@ -235,7 +235,7 @@
       }
 
       .info-value {
-        font-size: 14px;
+        font-size: 15px;
       }
 
       .btn-cv {
@@ -348,7 +348,7 @@
       /* === RESPONSIF === */
       @media (max-width: 768px) {
         .portfolio-item {
-          width: 100%;
+          flex: 100%;
         }
 
         .profile-card,
@@ -361,6 +361,12 @@
           grid-template-columns: 1fr;
         }
       }
+
+      @media (max-width: 900px) {
+        .portfolio-item{
+          flex: 0 1 calc(50% - 140x);
+        }
+     }
 
       /* === LAYOUT KHUSUS DESKTOP (ABOUT & PROFILE SEBELAHAN) === */
       @media (min-width: 1024px) {
@@ -501,7 +507,7 @@
 
           <div class="portfolio-grid">
             <div class="portfolio-item">
-              <div class="portfolio-name">Fotografer</div>
+              <div class="portfolio-name">videography</div>
               <div class="portfolio-desc">
                 Mengabadikan momen di event kampus dan organisasi.
               </div>
