@@ -202,7 +202,7 @@
         background: #0f172a;
         border-radius: 18px;
         border: 1px solid #1e293b;
-        padding: 8px 16px;
+        padding: 5px 16px;
         text-align: left;
         font-size: 13px;
       }
@@ -291,7 +291,7 @@
       .portfolio-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 14px;
+        gap: 15px;
         justify-content: center;
         margin-top: 16px;
 
@@ -308,7 +308,7 @@
         border: 1px solid #1e293b;
         padding: 16px;
 
-        width: calc(33.333% - 14px);
+        flex: 0 1 calc(33.333% - 14px);
         max-width: 330px;
       }
 
@@ -499,8 +499,8 @@
           <div class="content-card-inner">
           <h2>About Me</h2>
           <p>
-            I'm a Computer Science student who enjoys bulding clean, modern web interface and exploring how technology can solve real problems.
-            I'm also a content creator with a passion for photography and videography, and I love capturing moments as creatively as I build projcts.
+            I'm a Computer Science student who enjoys building clean, modern web interfaces and exploring how technology can solve real problems.
+            I'm also a content creator with a passion for photography and videography, and I love capturing moments as creatively as I build projects.
           </p>
 
           <p class="portfolio-title">Let's Check my Portfolio!</p>
@@ -564,9 +564,9 @@
       const roleText = document.getElementById("role-text");
       let roleIndex = 0;
       let charIndex = 0;
-      const typingSpeed = 90;
-      const eraseSpeed = 60;
-      const delayBetween = 1500;
+      const typingSpeed = 60;
+      const eraseSpeed = 40;
+      const delayBetween = 1000;
 
       function type() {
         const currentRole = roles[roleIndex];
