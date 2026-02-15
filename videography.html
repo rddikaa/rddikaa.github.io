@@ -64,13 +64,15 @@
       margin-bottom: 24px;
     }
 
-    /* VIDEO GRID (✨ Sudah termasuk center jika item kurang dari 3) */
+    /* VIDEO GRID */
     .video-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
-      justify-content: center;   /* ⭐ pusat grid secara keseluruhan */
+      justify-content: center;
+      margin-top: 20px;
     }
+
 
     .video-card {
       background: #0f172a;
@@ -78,9 +80,9 @@
       overflow: hidden;
       border: 1px solid #1e293b;
       transition: 0.2s;
-
-      max-width: 320px;   /* ⭐ batas agar bisa center */
-      margin: 0 auto;     /* ⭐ ini bikin item tersisa di baris terakhir nge-center */
+    
+      flex: 0 1 calc(33.333% - 20px);
+      max-width: 320px;
     }
 
     .video-card:hover {
@@ -142,6 +144,18 @@
       font-size: 12px;
       text-align: center;
       color: #64748b;
+    }
+
+    @media (max-width: 900px) {
+      .video-card {
+        flex: 0 1 calc(50% - 20px);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .video-card {
+        flex: 100%;
+      }
     }
 
     /* MOBILE */
