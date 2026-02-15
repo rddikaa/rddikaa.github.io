@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Videography – Radika</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 28px;
+      padding: 32px 28px;
+      border: 1px solid rgba(148,163,184,0.2);
+      box-shadow: 0 24px 50px rgba(0,0,0,0.55);
+    }
+
+    .back {
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .back a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    .back a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    p.subtitle {
+      font-size: 15px;
+      color: #cbd5e1;
+      margin-bottom: 24px;
+    }
+
+    /* VIDEO GRID (✨ Sudah termasuk center jika item kurang dari 3) */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-content: center;   /* ⭐ pusat grid secara keseluruhan */
+    }
+
+    .video-card {
+      background: #0f172a;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #1e293b;
+      transition: 0.2s;
+
+      max-width: 320px;   /* ⭐ batas agar bisa center */
+      margin: 0 auto;     /* ⭐ ini bikin item tersisa di baris terakhir nge-center */
+    }
+
+    .video-card:hover {
+      transform: scale(1.02);
+      border-color: #334155;
+    }
+
+    .thumb-wrap {
+      width: 100%;
+      height: 170px;
+      overflow: hidden;
+    }
+
+    .thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-info {
+      padding: 14px 16px;
+    }
+
+    .video-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .video-meta {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+
+    .video-desc {
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .video-link {
+      margin-top: 12px;
+    }
+
+    .video-link a {
+      font-size: 13px;
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    .video-link a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 12px;
+      text-align: center;
+      color: #64748b;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <main class="card">
+
+      <div class="back">
+        <a href="index.html">← Back to Home</a>
+      </div>
+
+      <h1>Videography</h1>
+      <p class="subtitle">
+        A collection of video highlights, promos, and personal storytelling projects.
+      </p>
+
+      <div class="video-grid">
+
+        <!-- Video Card 1 -->
+        <div class="video-card">
+          <div class="thumb-wrap">
+            <img src="img/vid-thumb-1.jpg" alt="Video 1">
+          </div>
+          <div class="video-info">
+            <div class="video-title">Campus Event Highlight</div>
+            <div class="video-meta">2024 • 3 min</div>
+            <div class="video-desc">
+              Short highlight video capturing the energy and atmosphere of a major campus event.
+            </div>
+            <div class="video-link">
+              <a href="#" target="_blank">Watch on YouTube →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Card 2 -->
+        <div class="video-card">
+          <div class="thumb-wrap">
+            <img src="img/vid-thumb-2.jpg" alt="Video 2">
+          </div>
+          <div class="video-info">
+            <div class="video-title">Organization Promo Video</div>
+            <div class="video-meta">2024 • Promo</div>
+            <div class="video-desc">
+              A quick promotional video introducing the organization and its activities.
+            </div>
+            <div class="video-link">
+              <a href="#" target="_blank">Watch on YouTube →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Card 3 -->
+        <div class="video-card">
+          <div class="thumb-wrap">
+            <img src="img/vid-thumb-3.jpg" alt="Video 3">
+          </div>
+          <div class="video-info">
+            <div class="video-title">Personal Short Film</div>
+            <div class="video-meta">2023 • 1 min</div>
+            <div class="video-desc">
+              Cinematic personal project exploring light, color, and mood.
+            </div>
+            <div class="video-link">
+              <a href="#" target="_blank">Watch on YouTube →</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- video-grid -->
+
+    </main>
+
+    <footer>© 2025 · Radika</footer>
+  </div>
+</body>
+</html>
